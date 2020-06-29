@@ -1,0 +1,3 @@
+<div *ngFor="let user of currentFriends">
+  <app-user-request [user]="user" [status]="1" (emitUnfriend)="unfriend($event)"></app-user-request>
+</div>

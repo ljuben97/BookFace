@@ -1,0 +1,23 @@
+<div class="wrapper border border-primary">
+  <div class="row">
+    <div class="col-4">
+      <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-fluid avatar">
+    </div>
+    <div class="col-4">
+      <h4>{{user.name}} {{user.last_name}}</h4>
+      <h5>{{user.email}}</h5>
+    </div>
+    <div class="col-4">
+      <div *ngIf="status === 1">
+        <button class="btn btn-danger" (click)="unfriend(user.id)">Unfriend</button>
+      </div>
+      <div *ngIf="status === 2">
+        <button class="btn btn-primary" (click)="acceptRequest(user.id)">Accept</button>
+        <button class="btn btn-danger" (click)="declineRequest(user.id)">Decline</button>
+      </div>
+      <div *ngIf="status === 3">
+        <button class="btn btn-danger" (click)="cancelFriendRequest(user.id)">Cancel Request</button>
+      </div>
+    </div>
+  </div>
+</div>

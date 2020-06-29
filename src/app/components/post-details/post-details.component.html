@@ -1,0 +1,51 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<div class="container bootstrap snippet">
+  <div class="col-sm-8" style="margin-left: 17%">
+    <br/>
+    <div class="panel panel-white post panel-shadow">
+      <div class="post-heading">
+        <div class="pull-left image">
+          <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+        </div>
+        <div class="pull-left meta">
+          <div class="title h5">
+            <a href="#"><b>{{post?.user_name}} {{post?.user_last_name}}</b></a>
+            made a post.
+          </div>
+          <h6 class="text-muted time">{{post?.date_created | date:'medium'}}</h6>
+        </div>
+      </div>
+      <div class="post-description">
+        <h3>{{post?.title}}</h3>
+        <p>{{post?.body}}</p>
+        <div class="stats">
+          <a href="#" class="btn btn-default stat-item">
+            <i class="fa fa-thumbs-up icon"></i>{{post?.likes?.length}}
+          </a>
+          <a href="#" class="btn btn-default stat-item">
+            <i class="fa fa-share icon"></i>12
+          </a>
+        </div>
+      </div>
+      <div class="post-footer">
+        <div class="">
+          <app-create-comment (emitNewComment)="createNewComment($event)" [postId]="post.id"></app-create-comment>
+        </div>
+        <ul class="comments-list">
+          <li *ngFor="let comment of post?.comments" class="comment">
+            <a class="pull-left" href="#">
+              <img class="avatar" src="https://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+            </a>
+            <div class="comment-body">
+              <div class="comment-heading">
+                <h4 class="user">{{comment.user_name}} {{comment.user_last_name}}</h4>
+                <h5 class="time">{{comment.created_at | date:'medium'}}</h5>
+              </div>
+              <p>{{comment.text}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

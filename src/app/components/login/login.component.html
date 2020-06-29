@@ -1,0 +1,36 @@
+  <div class="card" style="width: 40%; margin-left: 30%">
+    <article class="card-body">
+      <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+      <hr>
+      <br/>
+      <br/>
+      <p *ngIf="isInvalid" class="text-danger text-center">Invalid email or password!</p>
+      <form [formGroup]="formGroup" (ngSubmit)="login()">
+        <div class="form-group">
+          <div class="input-group">
+            <label for="email">Email:</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <input id="email" formControlName="email" class="form-control" placeholder="Email" type="email">
+          </div> <!-- input-group.// -->
+        </div> <!-- form-group// -->
+        <div class="form-group">
+          <div class="input-group">
+            <label for="password">Password</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input id="password" formControlName="password" class="form-control" placeholder="******" type="password">
+          </div> <!-- input-group.// -->
+        </div> <!-- form-group// -->
+        <br/>
+        <br/>
+        <br/>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+        </div> <!-- form-group// -->
+        <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+      </form>
+    </article>
+  </div>

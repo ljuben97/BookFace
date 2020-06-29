@@ -1,0 +1,7 @@
+<app-create-post (emitNewPost)="createNewPost($event)"></app-create-post>
+<br/>
+<div *ngFor="let post of posts">
+  <app-post (emitLike)="handleLike($event)" [post]="post" [isLiked]="isLiked(post.id)"></app-post>
+  <br/>
+</div>
+

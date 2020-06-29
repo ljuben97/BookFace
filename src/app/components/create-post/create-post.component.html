@@ -1,0 +1,11 @@
+<div class="col-md-8" style="margin-left: 17%">
+  <form [formGroup]="formGroup" (ngSubmit)="createPost()">
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="title" placeholder="Whats on your mind?">
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" type="text" rows="5" formControlName="body"> </textarea>
+    </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Post</button>
+  </form>
+</div>

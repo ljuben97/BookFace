@@ -1,0 +1,8 @@
+<div *ngFor="let user of receivedRequests">
+  <app-user-request
+    [user]="user"
+    [status]="2"
+    (emitAcceptRequest)="acceptRequest($event)"
+    (emitDeclineRequest)="declineRequest($event)">
+  </app-user-request>
+</div>
